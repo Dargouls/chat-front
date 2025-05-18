@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { CornerDownRight } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 import Button from '../button/button';
-import TextField from '../textField/textField';
+import TextArea from '../textArea/textArea';
 
 interface SubmitPromptProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -38,12 +38,16 @@ export default function SubmitPrompt({ ...props }: SubmitPromptProps) {
 			)}
 			onSubmit={handleSubmit(submit)}
 		>
-			<TextField
+			<TextArea
 				placeholder='Digite sua mensagem aqui... (Pressione Enter para enviar)'
 				variant='contained'
 				size='lg'
-				type='text'
-				min={2}
+				onKeyDown={(e) => {
+					if (e.key === 'Enter' && !e.shiftKey) {
+						e.preventDefault(); // impede quebra de linha
+						handleSubmit(submit)(); // envia o formulário
+					}
+				}}
 				register={register('message')}
 			/>
 

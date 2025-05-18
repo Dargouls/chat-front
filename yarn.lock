@@ -675,6 +675,11 @@
   dependencies:
     undici-types "~6.19.2"
 
+"@types/prismjs@^1.26.0":
+  version "1.26.5"
+  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.26.5.tgz#72499abbb4c4ec9982446509d2f14fb8483869d6"
+  integrity sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==
+
 "@types/react-dom@^19":
   version "19.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-19.0.1.tgz#b1032c4c3215018e4028a85a71441560216e51c6"
@@ -1098,7 +1103,7 @@ client-only@0.0.1:
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
-clsx@^2.1.1:
+clsx@^2.0.0, clsx@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.1.tgz#eed397c9fd8bd882bfb18deab7102049a2f32999"
   integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
@@ -1752,6 +1757,15 @@ form-data@^4.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+framer-motion@^12.12.1:
+  version "12.12.1"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.12.1.tgz#b756079cc050be7fa6ae0d093ab0903fd3f15ca1"
+  integrity sha512-PFw4/GCREHI2suK/NlPSUxd+x6Rkp80uQsfCRFSOQNrm5pZif7eGtmG1VaD/UF1fW9tRBy5AaS77StatB3OJDg==
+  dependencies:
+    motion-dom "^12.12.1"
+    motion-utils "^12.12.1"
+    tslib "^2.4.0"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -2382,6 +2396,26 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-7.1.2.tgz#93a9626ce5e5e66bd4db86849e7515e92340a707"
   integrity sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==
 
+motion-dom@^12.12.1:
+  version "12.12.1"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.12.1.tgz#12f50c778ca295de337e28f3b4937da86e9098ea"
+  integrity sha512-GXq/uUbZBEiFFE+K1Z/sxdPdadMdfJ/jmBALDfIuHGi0NmtealLOfH9FqT+6aNPgVx8ilq0DtYmyQlo6Uj9LKQ==
+  dependencies:
+    motion-utils "^12.12.1"
+
+motion-utils@^12.12.1:
+  version "12.12.1"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.12.1.tgz#63e28751325cb9d1cd684f3c273a570022b0010e"
+  integrity sha512-f9qiqUHm7hWSLlNW8gS9pisnsN7CRFRD58vNjptKdsqFLpkVnX00TNeD6Q0d27V9KzT7ySFyK1TZ/DShfVOv6w==
+
+motion@^12.12.1:
+  version "12.12.1"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-12.12.1.tgz#d0a329fd10130961f365c7a10ea8adb12f0ffcba"
+  integrity sha512-vN/3p++Ix0lVt9NH0ZqPrAy8QRTkff27t5z3z5+4BJ3cXPxtOia2EBZS4snM+JUTfl7J0JXP/5ERqu9GT/8IgA==
+  dependencies:
+    framer-motion "^12.12.1"
+    tslib "^2.4.0"
+
 ms@^2.1.1, ms@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
@@ -2675,6 +2709,14 @@ prettier@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.4.2.tgz#a5ce1fb522a588bf2b78ca44c6e6fe5aa5a2b13f"
   integrity sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==
+
+prism-react-renderer@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-2.4.1.tgz#ac63b7f78e56c8f2b5e76e823a976d5ede77e35f"
+  integrity sha512-ey8Ls/+Di31eqzUxC46h8MksNuGx/n0AAC8uKpwFau4RPDYLuE3EXTp8N8G2vX2N7UC/+IXeNUnlWBGGcAG+Ig==
+  dependencies:
+    "@types/prismjs" "^1.26.0"
+    clsx "^2.0.0"
 
 prop-types@^15.8.1:
   version "15.8.1"
@@ -3132,6 +3174,13 @@ tailwind-merge@^2.5.5:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-2.5.5.tgz#98167859b856a2a6b8d2baf038ee171b9d814e39"
   integrity sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==
+
+tailwind-scrollbar@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/tailwind-scrollbar/-/tailwind-scrollbar-4.0.2.tgz#764dbc00aede9c8b885a2b8e8191f7785e05a92b"
+  integrity sha512-wAQiIxAPqk0MNTPptVe/xoyWi27y+NRGnTwvn4PQnbvB9kp8QUBiGl/wsfoVBHnQxTmhXJSNt9NHTmcz9EivFA==
+  dependencies:
+    prism-react-renderer "^2.4.1"
 
 tailwindcss-animate@^1.0.7:
   version "1.0.7"
