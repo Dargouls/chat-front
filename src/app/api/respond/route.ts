@@ -32,24 +32,24 @@ const ChatRequestSchema = z.object({
 type ChatRequest = z.infer<typeof ChatRequestSchema>;
 
 // Mensagens traduzidas
-const TRANSLATIONS = {
-	pt: {
-		error_message: 'Desculpe, ocorreu um erro: {0}. Por favor, verifique sua conexão e configurações.',
-	},
-};
+// const TRANSLATIONS = {
+// 	pt: {
+// 		error_message: 'Desculpe, ocorreu um erro: {0}. Por favor, verifique sua conexão e configurações.',
+// 	},
+// };
 
 export async function POST(request: Request) {
 	try {
 		const raw = await request.json();
 		// Normaliza history garantindo parts válidos
 		const preprocessedHistory = Array.isArray(raw.history)
-			? raw.history.map((item: any) => ({
+			? raw.history.map((item: { role: string; text?: string; parts?: { text: string }[] }) => ({
 					role: item.role,
 					parts: Array.isArray(item.parts) ? item.parts : item.text ? [{ text: String(item.text) }] : [],
 				}))
 			: [];
 
-		const { message, files, history }: ChatRequest = ChatRequestSchema.parse({
+		const { message, history }: ChatRequest = ChatRequestSchema.parse({
 			...raw,
 			history: preprocessedHistory,
 		});
@@ -94,9 +94,9 @@ export async function POST(request: Request) {
 		currentHistory.push({ role: 'model', parts: [{ text: responseText }] });
 
 		return NextResponse.json({ response: responseText, history: currentHistory });
-	} catch (err: any) {
+	} catch (err: unknown) {
 		console.error('Erro na rota /api/respond:', err);
-		const msg = TRANSLATIONS.pt.error_message.replace('{0}', err.message ?? String(err));
-		return NextResponse.json({ error: msg }, { status: 500 });
+		// const msg = TRANSLATIONS.pt.error_message.replace('{0}', err?.message ?? String(err));
+		return NextResponse.json({ error: err }, { status: 500 });
 	}
 }
