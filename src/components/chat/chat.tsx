@@ -1,17 +1,18 @@
 'use client';
 
-import { marked } from 'marked';
-
 import { useChatContext } from '@/contexts/chatContext';
 import { ElementRef, useEffect, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import CircularProgress from '../circularProgress/circularProgress';
 import { Avatar, AvatarFallback } from '../ui/avatar';
 import { ScrollArea } from '../ui/scroll-area';
+import MarkdownRenderer from './serialize-markdown';
 
 interface ChatProps extends React.HTMLAttributes<HTMLDivElement> {
 	containerClassName?: string;
 }
+
+// Componente customizado para blocos de código
 
 export default function Chat({ containerClassName, ...props }: ChatProps) {
 	const { history, isLoading } = useChatContext();
@@ -28,7 +29,7 @@ export default function Chat({ containerClassName, ...props }: ChatProps) {
 	return (
 		<>
 			<ScrollArea ref={scrollAreaRef} className={props.className}>
-				<div {...props} className={twMerge('flex flex-col gap-2 px-4 py-2 sm:px-20', containerClassName)}>
+				<div {...props} className={twMerge('flex flex-col gap-6 px-4 py-2 sm:px-20', containerClassName)}>
 					{dialog.map((item, index) => {
 						if (item.role === 'assistant') {
 							return <Response key={index} content={item.content} />;
@@ -45,37 +46,26 @@ export default function Chat({ containerClassName, ...props }: ChatProps) {
 }
 
 const User = ({ content }: { content: string }) => {
-	return <div className='flex justify-end p-4'>{content}</div>;
+	return (
+		<div className='flex justify-end'>
+			<div className='max-w-[80%] rounded-lg px-4 py-3 text-white'>{content}</div>
+		</div>
+	);
 };
 
 const Response = ({ content }: { content: string | React.ReactNode }) => {
-	// const parseText = (text: string) => {
-
-	// 	return parts.map((part, index) =>
-	// 		index % 2 === 1 ? (
-	// 			<>
-	// 				<hr className='border-border my-10 justify-self-center border md:w-1/2' />
-	// 				<h1 key={index} className='text-xl'>
-	// 					<b key={index}>{part}</b>
-	// 				</h1>
-	// 			</>
-	// 		) : (
-	// 			<span key={index}>{part}</span>
-	// 		)
-	// 	);
-	// };
-
 	return (
-		<div className='bg-foreground flex gap-2 p-4'>
-			<Avatar className={twMerge('ease-bounce transition-transform duration-300')}>
-				{/* <AvatarImage src='https://github.com/shadcn.png' /> */}
-				<AvatarFallback>A</AvatarFallback>
+		<div className='bg-foreground flex gap-3 rounded-lg p-2'>
+			<Avatar className={twMerge('mt-1 h-8 w-8 flex-shrink-0')}>
+				<AvatarFallback className='text-sm'>A</AvatarFallback>
 			</Avatar>
-			{typeof content === 'string' ? (
-				<div dangerouslySetInnerHTML={{ __html: marked.parse(content) }} />
-			) : (
-				content
-			)}
+			<div className='min-w-0 flex-1 p-2'>
+				{typeof content === 'string' ? (
+					<MarkdownRenderer content={content} />
+				) : (
+					<div className='flex items-center'>{content}</div>
+				)}
+			</div>
 		</div>
 	);
 };

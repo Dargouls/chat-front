@@ -91,6 +91,16 @@
 	--sidebar-ring: 217.2 91.2% 59.8%;
 }
 
+li {
+	list-style: inherit;
+}
+ul {
+	list-style: inherit;
+}
+ol {
+	list-style: inherit;
+}
+
 ::selection {
 	background-color: theme('backgroundColor.primary.DEFAULT');
 	color: theme('textColor.foreground');

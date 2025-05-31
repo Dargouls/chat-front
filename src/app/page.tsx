@@ -70,19 +70,16 @@ export default function Home() {
 					</DialogHeader>
 					<DialogDescription>
 						<span className='mb-4 block'>
-							Este é um chatbot desenvolvido utilizando o modelo Llama 3.2 3B. A aplicação está atualmente em
-							fase de testes, podendo apresentar alguns bugs relacionados ao processamento de texto. O sistema
-							é projetado para fornecer interações baseadas em inteligência artificial, com o objetivo de
-							oferecer respostas precisas e eficientes.
+							Este é um chatbot desenvolvido utilizando o modelo Gemini flash 2. A aplicação está atualmente
+							em fase de testes, podendo apresentar alguns bugs relacionados ao processamento de texto. O
+							sistema é projetado para fornecer interações baseadas em inteligência artificial, com o objetivo
+							de oferecer respostas precisas e eficientes.
 						</span>
 						<span className='text-xl font-semibold'>Tecnologias principais:</span>
 
 						<span className='block list-inside list-disc'>
 							<li className='list-item'>
-								<span>API da Meta Llama 3.2</span>
-							</li>
-							<li className='list-item'>
-								<span>FastAPI</span>
+								<span>API Gemini flash 2</span>
 							</li>
 							<li className='list-item'>
 								<span>NextJs</span>

@@ -12,13 +12,20 @@ const useChat = () => {
 
 	const respond = async (prompt: string) => {
 		setLoading(true);
-		const response = await api.post('/chat/respond', {
-			message: prompt,
-			history: history,
+
+		console.log('prompt e histórico', { prompt, history });
+		//fazer a mesma rota, mas com fetch:
+		const response = await fetch('/api/respond', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ message: prompt, history: history }),
 		});
 		setLoading(false);
 
-		return response?.data as ChatResponse;
+		const data = await response.json();
+		return data as ChatResponse;
 	};
 
 	const getHistory = async () => {
@@ -35,5 +42,3 @@ const useChat = () => {
 };
 
 export default useChat;
-
-// export type UseChat = ReturnType<typeof useChat>;
