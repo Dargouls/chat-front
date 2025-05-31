@@ -6,7 +6,6 @@ import 'aos/dist/aos.css';
 
 import type { Metadata } from 'next';
 import { Sen } from 'next/font/google';
-import localFont from 'next/font/local';
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
 
@@ -17,20 +16,9 @@ const sen = Sen({
 	display: 'swap',
 });
 
-const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
-	variable: '--font-geist-sans',
-	weight: '100 900',
-});
-const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
-	variable: '--font-geist-mono',
-	weight: '100 900',
-});
-
 export const metadata: Metadata = {
-	title: 'Chatbot Llama 3',
-	description: 'Chatbot com base no modelo Llama 3',
+	title: 'Super Mini Chat',
+	description: 'Chatbot com inteligência artificial',
 };
 
 export default function RootLayout({
