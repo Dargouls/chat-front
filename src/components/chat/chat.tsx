@@ -48,7 +48,7 @@ export default function Chat({ containerClassName, ...props }: ChatProps) {
 const User = ({ content }: { content: string }) => {
 	return (
 		<div className='flex justify-end'>
-			<div className='max-w-[80%] rounded-lg px-4 py-3 text-white'>{content}</div>
+			<div className='text-text max-w-[80%] rounded-lg px-4 py-3'>{content}</div>
 		</div>
 	);
 };
