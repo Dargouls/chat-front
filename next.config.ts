@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       {
         // Se alguém vier pelo domínio antigo na raiz
         source: '/',
-        destination: 'https://www.gabrielzv.com/chat-ai',
+        destination: 'https://www.gabrielzv.com/superminichat',
         permanent: true, // Erro 301 (bom para SEO)
       },
     ];
