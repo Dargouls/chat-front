@@ -15,7 +15,10 @@ if (!MODEL_ID) {
 }
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: MODEL_ID });
+const model = genAI.getGenerativeModel({ 
+  model: MODEL_ID,
+  systemInstruction: "Você é um assistente útil. Responda sempre em português brasileiro, independentemente do idioma da pergunta, a menos que o usuário peça explicitamente para traduzir para outro idioma."
+});
 
 // Schema de validação com Zod
 const PartSchema = z.object({ text: z.string() });
