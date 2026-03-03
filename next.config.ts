@@ -5,10 +5,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        // Se alguém vier pelo domínio antigo na raiz
-        source: '/',
-        destination: 'https://www.gabrielzv.com/superminichat',
-        permanent: true, // Erro 301 (bom para SEO)
+        // Tenta capturar quem chega no domínio antigo
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'superminichat.vercel.app', // DOMÍNIO ANTIGO
+          },
+        ],
+        destination: 'https://www.gabrielzv.com/chat-ai/:path*',
+        permanent: true,
       },
     ];
   },
