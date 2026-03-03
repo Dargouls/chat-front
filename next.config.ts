@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: '/chat-ai',
+  basePath: '/superminichat',
 };
 
 export default nextConfig;
