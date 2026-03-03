@@ -7,6 +7,8 @@ interface ChatResponse {
 	history: HistoryItemProps[];
 }
 
+const projectName = process.env.NEXT_PUBLIC_PROJECT_NAME
+
 const useChat = () => {
 	const { setLoading, history } = useChatContext();
 
@@ -15,7 +17,7 @@ const useChat = () => {
 
 		console.log('prompt e histórico', { prompt, history });
 		//fazer a mesma rota, mas com fetch:
-		const response = await fetch(`${process.env.PROJECT_NAME}/api/respond`, {
+		const response = await fetch(`${projectName}/api/respond`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
