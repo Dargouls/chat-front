@@ -31,7 +31,8 @@
     "react-syntax-highlighter": "^15.6.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.25.42"
+    "zod": "^3.25.42",
+    "@vercel/analytics": "^1.6.1"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
