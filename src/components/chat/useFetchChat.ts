@@ -15,7 +15,7 @@ const useChat = () => {
 
 		console.log('prompt e histórico', { prompt, history });
 		//fazer a mesma rota, mas com fetch:
-		const response = await fetch('/api/respond', {
+		const response = await fetch(`${process.env.PROJECT_NAME}/api/respond`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
