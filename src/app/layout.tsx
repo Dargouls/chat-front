@@ -1,6 +1,6 @@
 import { ChatProvider } from '@/contexts/chatContext';
 import { ThemeProvider } from '@/contexts/themeContext';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 
 import InitAOS from '@/lib/init-aos';
 import 'aos/dist/aos.css';
