@@ -8,21 +8,8 @@ import Chat from '@/components/chat/chat';
 import ClearChat from '@/components/clearChat/clearChat';
 import Header from '@/components/layout/header/header';
 import SubmitPrompt from '@/components/submitPrompt/submitPrompt';
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-} from '@/components/ui/dialog';
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from '@/components/ui/dropdown';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown';
 import { Github, Settings } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,7 +21,7 @@ export default function Home() {
 	return (
 		<div className='flex h-screen flex-col p-4 font-[family-name:var(--font-geist-sans)]'>
 			<Header className='flex justify-between'>
-				<Link href='https://gabrielzv.com' target='_blank'>
+				<Link href='https://gabrielzv.com'>
 					<Image src={logo} alt='logo - Gabriel Azevedo' width={50} height={50} />
 				</Link>
 				<DropdownMenu>
@@ -70,10 +57,9 @@ export default function Home() {
 					</DialogHeader>
 					<DialogDescription>
 						<span className='mb-4 block'>
-							Este é um chatbot desenvolvido utilizando o modelo Gemini flash 2. A aplicação está atualmente
-							em fase de testes, podendo apresentar alguns bugs relacionados ao processamento de texto. O
-							sistema é projetado para fornecer interações baseadas em inteligência artificial, com o objetivo
-							de oferecer respostas precisas e eficientes.
+							Este é um chatbot desenvolvido utilizando o modelo Gemini flash 2. A aplicação está atualmente em fase de testes, podendo
+							apresentar alguns bugs relacionados ao processamento de texto. O sistema é projetado para fornecer interações baseadas em
+							inteligência artificial, com o objetivo de oferecer respostas precisas e eficientes.
 						</span>
 						<span className='text-xl font-semibold'>Tecnologias principais:</span>
 
@@ -91,11 +77,7 @@ export default function Home() {
 					</DialogDescription>
 
 					<DialogFooter className='hover:underline'>
-						<Link
-							href='https://github.com/Dargouls/chat-front'
-							target='_blank'
-							className='flex items-center gap-2'
-						>
+						<Link href='https://github.com/Dargouls/chat-front' target='_blank' className='flex items-center gap-2'>
 							<Github size={16} />
 							<span>Repositório</span>
 						</Link>
