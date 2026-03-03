@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
             value: 'superminichat.vercel.app', // DOMÍNIO ANTIGO
           },
         ],
-        destination: 'https://www.gabrielzv.com/chat-ai/:path*',
+        destination: 'https://www.gabrielzv.com/superminichat/:path*',
         permanent: true,
       },
     ];
