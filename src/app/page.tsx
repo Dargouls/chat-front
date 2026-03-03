@@ -34,7 +34,7 @@ export default function Home() {
 	return (
 		<div className='flex h-screen flex-col p-4 font-[family-name:var(--font-geist-sans)]'>
 			<Header className='flex justify-between'>
-				<Link href='https://gabriel-azv.com' target='_blank'>
+				<Link href='https://gabrielzv.com' target='_blank'>
 					<Image src={logo} alt='logo - Gabriel Azevedo' width={50} height={50} />
 				</Link>
 				<DropdownMenu>
